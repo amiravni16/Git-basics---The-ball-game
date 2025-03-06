@@ -58,11 +58,36 @@ function changeBackgroundColor() {
   document.body.style.backgroundColor = getRandomColor()
 }
 
+function resetGame() {
+  var ball1 = document.querySelector(".ball")
+  var ball2 = document.querySelector(".ball2")
+  var ball3 = document.querySelector(".ball3")
+  var ball4 = document.querySelector(".ball4")
+  var ball5 = document.querySelector(".ball5")
+
+  ball1.style.width = "100px"
+  ball1.style.height = "100px"
+  ball1.textContent = "100"
+  ball1.style.backgroundColor = "red"
+
+  ball2.style.width = "100px"
+  ball2.style.height = "100px"
+  ball2.textContent = "100"
+  ball2.style.backgroundColor = "blue"
+
+  ball3.style.backgroundColor = "green"
+  ball4.style.backgroundColor = "purple"
+  ball5.style.backgroundColor = "orange"
+
+  document.body.style.backgroundColor = "black"
+}
+
 var ball1 = document.querySelector(".ball")
 var ball2 = document.querySelector(".ball2")
 var ball3 = document.querySelector(".ball3")
 var ball4 = document.querySelector(".ball4")
 var ball5 = document.querySelector(".ball5")
+var ball6 = document.querySelector(".ball6")
 
 ball1.addEventListener("click", function(event) {
   onBallClick(event, 400)
@@ -75,3 +100,4 @@ ball2.addEventListener("click", function(event) {
 ball3.addEventListener("click", swapBalls)
 ball4.addEventListener("click", shrinkBalls)
 ball5.addEventListener("click", changeBackgroundColor)
+ball6.addEventListener("click", resetGame)
