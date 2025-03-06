@@ -1,7 +1,12 @@
 function onBallClick() {
   const ball = document.querySelector(".ball")
-  let currentSize = parseInt(window.getComputedStyle(ball).width)
-  const newSize = currentSize + 50
+  var currentSize = parseInt(window.getComputedStyle(ball).width)
+  var newSize = currentSize + 50
+
+  if (newSize > 400) {
+    newSize = 100
+  }
+
   ball.style.width = `${newSize}px`
   ball.style.height = `${newSize}px`
   ball.textContent = newSize
