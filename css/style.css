@@ -6,10 +6,10 @@
     color: white;
   }
   
-  .ball, .ball2, .ball3, .ball4 {
+  .ball, .ball2, .ball3, .ball4, .ball5 {
     width: 100px;
     height: 100px;
-    border-radius: 50%; 
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,17 +22,21 @@
   }
   
   .ball {
-    background-color: red; 
+    background-color: red;
   }
   
   .ball2 {
-    background-color: blue; 
+    background-color: blue;
   }
   
   .ball3 {
-    background-color: green; 
+    background-color: green;
   }
   
   .ball4 {
-    background-color: purple; 
+    background-color: purple;
+  }
+  
+  .ball5 {
+    background-color: orange;
   }
