@@ -1,0 +1,6 @@
+my-notes.txt
+-----------
+- Project: Ball Game
+- Author: Amir Avni
+- Description: A simple interactive ball game.
+- Notes: This file is for personal use and will not be tracked by Git.
