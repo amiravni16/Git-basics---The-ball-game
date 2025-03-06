@@ -1,7 +1,6 @@
 'use strict'
 
-function onBallClick(event, maxDiameter) {
-  var ball = event.target
+function onBallClick(ball, maxDiameter) {
   var currentSize = parseInt(window.getComputedStyle(ball).width)
   var randomIncrement = getRandomInt(20, 60)
   var newSize = currentSize + randomIncrement
@@ -82,6 +81,35 @@ function resetGame() {
   document.body.style.backgroundColor = "black"
 }
 
+var growthIntervalId
+var shrinkIntervalId
+var swapIntervalId
+
+function startIntervals() {
+  growthIntervalId = setInterval(function () {
+    onBallClick(ball1, 400) 
+    onBallClick(ball2, 300) 
+  }, 2000)
+
+  
+  setTimeout(function () {
+    shrinkIntervalId = setInterval(function () {
+      shrinkBalls() 
+    }, 2000)
+  }, 1500)
+
+  
+  swapIntervalId = setInterval(function () {
+    swapBalls() 
+  }, 2000)
+}
+
+function stopIntervals() {
+  clearInterval(growthIntervalId)
+  clearInterval(shrinkIntervalId)
+  clearInterval(swapIntervalId)
+}
+
 var ball1 = document.querySelector(".ball")
 var ball2 = document.querySelector(".ball2")
 var ball3 = document.querySelector(".ball3")
@@ -89,15 +117,26 @@ var ball4 = document.querySelector(".ball4")
 var ball5 = document.querySelector(".ball5")
 var ball6 = document.querySelector(".ball6")
 
-ball1.addEventListener("click", function(event) {
-  onBallClick(event, 400)
+ball1.addEventListener("click", function () {
+  onBallClick(ball1, 400)
 })
 
-ball2.addEventListener("click", function(event) {
-  onBallClick(event, 300)
+ball2.addEventListener("click", function () {
+  onBallClick(ball2, 300)
 })
 
 ball3.addEventListener("click", swapBalls)
 ball4.addEventListener("click", shrinkBalls)
 ball5.addEventListener("click", changeBackgroundColor)
 ball6.addEventListener("click", resetGame)
+
+var hoverTimeout
+
+ball6.addEventListener("mouseenter", function () {
+  hoverTimeout = setTimeout(startIntervals, 2000)
+})
+
+ball6.addEventListener("mouseleave", function () {
+  clearTimeout(hoverTimeout)
+  stopIntervals()
+})
