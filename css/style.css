@@ -21,3 +21,19 @@ h1{
     margin: 0 auto;
     transition: width 1s, height 1s;
   }
+
+  .ball2 {
+    width: 100px;
+    height: 100px;
+    background-color: blue; 
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 20px auto; 
+    transition: width 1s, height 1s;
+  }
