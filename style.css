@@ -5,3 +5,18 @@
 h1{
     color: white;
 }
+
+.ball {
+    width: 100px;
+    height: 100px;
+    background-color: red; 
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white; 
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 0 auto; 
+  }
