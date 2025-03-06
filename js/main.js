@@ -11,6 +11,7 @@ function onBallClick() {
   ball.style.width = `${newSize}px`
   ball.style.height = `${newSize}px`
   ball.textContent = newSize
+  ball.style.backgroundColor = getRandomColor()
 }
 const ball = document.querySelector(".ball")
 ball.addEventListener("click", onBallClick)
