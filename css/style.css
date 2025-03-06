@@ -6,7 +6,7 @@
     color: white;
   }
   
-  .ball, .ball2, .ball3, .ball4, .ball5 {
+  .ball, .ball2, .ball3, .ball4, .ball5, .ball6 {
     width: 100px;
     height: 100px;
     border-radius: 50%;
@@ -39,4 +39,8 @@
   
   .ball5 {
     background-color: orange;
+  }
+  
+  .ball6 {
+    background-color: brown;
   }
